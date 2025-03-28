@@ -1,0 +1,26 @@
+{
+    "name": "Ubuntu 22.04 Development Container",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "args": {
+            "USERNAME": "vscode"
+        }
+    },
+    "containerUser": "vscode",
+    "mounts": [
+        "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+    ],
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/bash"
+            },
+            "extensions": [
+                "ms-vscode.cpptools",
+                "ms-python.python",
+                "esbenp.prettier-vscode"
+            ]
+        }
+    },
+    "remoteUser": "vscode"
+}
