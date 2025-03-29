@@ -43,11 +43,3 @@ RUN mkdir -p ${USER_HOME_DIR}/.dl
 ENV BR2_DL_DIR=${USER_HOME_DIR}/.dl
 
 WORKDIR ${USER_HOME_DIR}
-# # Copy and execute the cross-compile toolchain installation script
-# COPY ./install_cross_compile_toolchain.sh /tmp/install_cross_compile_toolchain.sh
-
-# # Run the script as the vscode user
-# RUN chown $USERNAME:$USERNAME /tmp/install_cross_compile_toolchain.sh \
-#     && chmod +x /tmp/install_cross_compile_toolchain.sh \
-#     && su $USERNAME -c "/tmp/install_cross_compile_toolchain.sh" \
-#     && rm /tmp/install_cross_compile_toolchain.sh
